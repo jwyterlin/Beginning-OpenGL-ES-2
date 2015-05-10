@@ -17,6 +17,7 @@
 		7B6ED3781AFF0A3E00A04417 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B6ED3771AFF0A3E00A04417 /* QuartzCore.framework */; };
 		7B6ED37B1AFF0A7700A04417 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B6ED37A1AFF0A7700A04417 /* OpenGLES.framework */; };
 		7B6ED37D1AFF0A8C00A04417 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B6ED37C1AFF0A8C00A04417 /* GLKit.framework */; };
+		7B6ED3801AFFC9E100A04417 /* HelloGLKitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B6ED37F1AFFC9E100A04417 /* HelloGLKitViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,8 @@
 		7B6ED3771AFF0A3E00A04417 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		7B6ED37A1AFF0A7700A04417 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		7B6ED37C1AFF0A8C00A04417 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		7B6ED37E1AFFC9E100A04417 /* HelloGLKitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HelloGLKitViewController.h; path = ViewController/HelloGLKitViewController.h; sourceTree = "<group>"; };
+		7B6ED37F1AFFC9E100A04417 /* HelloGLKitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HelloGLKitViewController.m; path = ViewController/HelloGLKitViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +97,8 @@
 				7B6ED3551AFF07D200A04417 /* AppDelegate.h */,
 				7B6ED3561AFF07D200A04417 /* AppDelegate.m */,
 				7B6ED3581AFF07D200A04417 /* ViewController.h */,
+				7B6ED37E1AFFC9E100A04417 /* HelloGLKitViewController.h */,
+				7B6ED37F1AFFC9E100A04417 /* HelloGLKitViewController.m */,
 				7B6ED3591AFF07D200A04417 /* ViewController.m */,
 				7B6ED35B1AFF07D200A04417 /* Main.storyboard */,
 				7B6ED35E1AFF07D200A04417 /* Images.xcassets */,
@@ -242,6 +247,7 @@
 				7B6ED35A1AFF07D200A04417 /* ViewController.m in Sources */,
 				7B6ED3571AFF07D200A04417 /* AppDelegate.m in Sources */,
 				7B6ED3541AFF07D200A04417 /* main.m in Sources */,
+				7B6ED3801AFFC9E100A04417 /* HelloGLKitViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
