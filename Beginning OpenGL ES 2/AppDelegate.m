@@ -10,7 +10,7 @@
 
 #import <QuartzCore/QuartzCore.h>
 
-@interface AppDelegate ()<GLKViewDelegate> {
+@interface AppDelegate ()<GLKViewDelegate,GLKViewControllerDelegate> {
     
     float _curRed;
     BOOL _increasing;
@@ -23,24 +23,24 @@
 
 -(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    _increasing = YES;
-    _curRed = 0.0;
-    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     EAGLContext * context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
     GLKView *view = [[GLKView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     view.context = context;
     view.delegate = self;
-    view.enableSetNeedsDisplay = NO;
-    [self.window addSubview:view];
     
-    CADisplayLink *displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(render:)];
-    [displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+    _increasing = YES;
+    _curRed = 0.0;
+    
+    GLKViewController * viewController = [[GLKViewController alloc] initWithNibName:nil bundle:nil];
+    viewController.view = view;
+    viewController.delegate = self;
+    viewController.preferredFramesPerSecond = 60;
+    self.window.rootViewController = viewController;
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
-    
     return YES;
 }
 
@@ -70,34 +70,31 @@
 
 -(void)glkView:(GLKView *)view drawInRect:(CGRect)rect {
     
-    if (_increasing) {
-        _curRed += 0.01;
-    } else {
-        _curRed -= 0.01;
-    }
-    
-    if (_curRed >= 1.0) {
-        _curRed = 1.0;
-        _increasing = NO;
-    }
-    
-    if (_curRed <= 0.0) {
-        _curRed = 0.0;
-        _increasing = YES;
-    }
-    
     glClearColor(_curRed, 0.0, 0.0, 1.0);
     glClear(GL_COLOR_BUFFER_BIT);
     
 }
 
-#pragma mark - Helper methods
+#pragma mark - GLKViewControllerDelegate methods
 
--(void)render:(CADisplayLink*)displayLink {
-
-    GLKView *view = self.window.subviews[0];
-    [view display];
-
+-(void)glkViewControllerUpdate:(GLKViewController *)controller {
+    
+    if ( _increasing ) {
+        _curRed += 1.0 * controller.timeSinceLastUpdate;
+    } else {
+        _curRed -= 1.0 * controller.timeSinceLastUpdate;
+    }
+    
+    if ( _curRed >= 1.0 ) {
+        _curRed = 1.0;
+        _increasing = NO;
+    }
+    
+    if ( _curRed <= 0.0 ) {
+        _curRed = 0.0;
+        _increasing = YES;
+    }
+    
 }
 
 @end
