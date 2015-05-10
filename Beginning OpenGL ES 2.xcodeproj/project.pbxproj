@@ -14,6 +14,9 @@
 		7B6ED35F1AFF07D200A04417 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B6ED35E1AFF07D200A04417 /* Images.xcassets */; };
 		7B6ED3621AFF07D200A04417 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B6ED3601AFF07D200A04417 /* LaunchScreen.xib */; };
 		7B6ED36E1AFF07D200A04417 /* Beginning_OpenGL_ES_2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B6ED36D1AFF07D200A04417 /* Beginning_OpenGL_ES_2Tests.m */; };
+		7B6ED3781AFF0A3E00A04417 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B6ED3771AFF0A3E00A04417 /* QuartzCore.framework */; };
+		7B6ED37B1AFF0A7700A04417 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B6ED37A1AFF0A7700A04417 /* OpenGLES.framework */; };
+		7B6ED37D1AFF0A8C00A04417 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B6ED37C1AFF0A8C00A04417 /* GLKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,9 @@
 		7B6ED3671AFF07D200A04417 /* Beginning OpenGL ES 2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Beginning OpenGL ES 2Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B6ED36C1AFF07D200A04417 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B6ED36D1AFF07D200A04417 /* Beginning_OpenGL_ES_2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Beginning_OpenGL_ES_2Tests.m; sourceTree = "<group>"; };
+		7B6ED3771AFF0A3E00A04417 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		7B6ED37A1AFF0A7700A04417 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		7B6ED37C1AFF0A8C00A04417 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +53,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B6ED37D1AFF0A8C00A04417 /* GLKit.framework in Frameworks */,
+				7B6ED37B1AFF0A7700A04417 /* OpenGLES.framework in Frameworks */,
+				7B6ED3781AFF0A3E00A04417 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +74,7 @@
 			children = (
 				7B6ED3501AFF07D200A04417 /* Beginning OpenGL ES 2 */,
 				7B6ED36A1AFF07D200A04417 /* Beginning OpenGL ES 2Tests */,
+				7B6ED3791AFF0A5500A04417 /* Frameworks */,
 				7B6ED34F1AFF07D200A04417 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -117,6 +127,16 @@
 				7B6ED36C1AFF07D200A04417 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7B6ED3791AFF0A5500A04417 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7B6ED37C1AFF0A8C00A04417 /* GLKit.framework */,
+				7B6ED37A1AFF0A7700A04417 /* OpenGLES.framework */,
+				7B6ED3771AFF0A3E00A04417 /* QuartzCore.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
