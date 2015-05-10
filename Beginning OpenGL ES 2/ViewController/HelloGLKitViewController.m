@@ -54,6 +54,10 @@
     [super didReceiveMemoryWarning];
 }
 
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    self.paused = !self.paused;
+}
+
 #pragma mark - GLKViewDelegate
 
 -(void)glkView:(GLKView *)view drawInRect:(CGRect)rect {
