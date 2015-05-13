@@ -18,6 +18,7 @@
 }
 
 @property(strong,nonatomic) EAGLContext *context;
+@property(strong,nonatomic) GLKBaseEffect *effect;
 
 @end
 
@@ -41,12 +42,14 @@ const GLubyte Indices[] = {
 @implementation HelloGLKitViewController
 
 @synthesize context = _context;
+@synthesize effect = _effect;
 
 #pragma mark - View Lifecycle
 
 -(void)setupGL {
     
     [EAGLContext setCurrentContext:self.context];
+    self.effect = [[GLKBaseEffect alloc] init];
     
     glGenBuffers(1, &_vertexBuffer);
     glBindBuffer(GL_ARRAY_BUFFER, _vertexBuffer);
@@ -64,6 +67,8 @@ const GLubyte Indices[] = {
     
     glDeleteBuffers(1, &_vertexBuffer);
     glDeleteBuffers(1, &_indexBuffer);
+    
+    self.effect = nil;
     
 }
 
