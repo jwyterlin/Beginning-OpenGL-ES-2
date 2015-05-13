@@ -12,6 +12,8 @@
     
     float _curRed;
     BOOL _increasing;
+    GLuint _vertexBuffer;
+    GLuint _indexBuffer;
     
 }
 
@@ -42,6 +44,29 @@ const GLubyte Indices[] = {
 
 #pragma mark - View Lifecycle
 
+-(void)setupGL {
+    
+    [EAGLContext setCurrentContext:self.context];
+    
+    glGenBuffers(1, &_vertexBuffer);
+    glBindBuffer(GL_ARRAY_BUFFER, _vertexBuffer);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(Vertices), Vertices, GL_STATIC_DRAW);
+    
+    glGenBuffers(1, &_indexBuffer);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, _indexBuffer);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(Indices), Indices, GL_STATIC_DRAW);
+    
+}
+
+-(void)tearDownGL {
+    
+    [EAGLContext setCurrentContext:self.context];
+    
+    glDeleteBuffers(1, &_vertexBuffer);
+    glDeleteBuffers(1, &_indexBuffer);
+    
+}
+
 -(void)viewDidLoad {
  
     [super viewDidLoad];
@@ -53,6 +78,8 @@ const GLubyte Indices[] = {
 
     GLKView *view = (GLKView *)self.view;
     view.context = self.context;
+    
+    [self setupGL];
 
 }
 
@@ -65,6 +92,8 @@ const GLubyte Indices[] = {
 
     self.context = nil;
 
+    [self tearDownGL];
+    
 }
 
 -(void)didReceiveMemoryWarning {
