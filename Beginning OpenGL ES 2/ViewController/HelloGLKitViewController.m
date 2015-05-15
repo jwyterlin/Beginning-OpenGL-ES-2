@@ -117,6 +117,8 @@ const GLubyte Indices[] = {
     glClearColor(_curRed, 0.0, 0.0, 1.0);
     glClear(GL_COLOR_BUFFER_BIT);
     
+    [self.effect prepareToDraw];
+    
 }
 
 #pragma mark - GLKViewControllerDelegate
