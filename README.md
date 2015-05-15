@@ -5,4 +5,4 @@ An initial study about OpenGL ES 2 in an iOS app
 
 Follow a screenshot of the app
 
-![Preview](https://raw.github.com/jwyterlin/Beginning-OpenGL-ES-2/master/Screenshot/screenshot1.gif)
+![Preview](https://github.com/jwyterlin/Beginning-OpenGL-ES-2/blob/master/Screenshot/screenshot1.gif)
