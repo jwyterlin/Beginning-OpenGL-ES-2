@@ -14,6 +14,7 @@
     BOOL _increasing;
     GLuint _vertexBuffer;
     GLuint _indexBuffer;
+    float _rotation;
     
 }
 
@@ -137,6 +138,17 @@ const GLubyte Indices[] = {
         _curRed = 0.0;
         _increasing = YES;
     }
+    
+    float aspect = fabs( self.view.bounds.size.width / self.view.bounds.size.height );
+    
+    GLKMatrix4 projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(65.0f), aspect, 4.0f, 10.0f);
+    
+    self.effect.transform.projectionMatrix = projectionMatrix;
+    
+    GLKMatrix4 modelViewMatrix = GLKMatrix4MakeTranslation(0.0f, 0.0f, -6.0f);
+    _rotation += 90 * self.timeSinceLastUpdate;
+    modelViewMatrix = GLKMatrix4Rotate(modelViewMatrix, GLKMathDegreesToRadians(_rotation), 0, 0, 1);
+    self.effect.transform.modelviewMatrix = modelViewMatrix;
 
 }
 
